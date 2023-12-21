@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const app = express();
-const port = 3000; // or any desired port
+const port = 3300; // or any desired port
 
 process.env.SECRET_KEY = 'secret-key-ABC123';
 
