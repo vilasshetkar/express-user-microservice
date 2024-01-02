@@ -1,7 +1,7 @@
 pipeline {
     environment {
-	    	name = "ReactTasks"
-		registry = "vilasshetkar/test"
+	    	name = "TaskApi"
+		registry = "vilasshetkar/express-task-api"
 		registryCredential = 'dockerhub_vilasshetkar'
 		dockerImage = ''
 	}
@@ -10,7 +10,7 @@ pipeline {
 	
 		stage('01 Cloning our Git') {
 			steps {
-				git branch: 'main', url: 'https://github.com/vilasshetkar/react-tasks.git'
+				git branch: 'main', url: 'https://github.com/vilasshetkar/express-user-microservice.git'
 			}
 		}
 		
@@ -37,7 +37,7 @@ pipeline {
 				echo 'deploying on another server'
             			sh 'docker stop $name || true'
             			sh 'docker rm $name || true'
-				sh "docker run -dp 80:80 --name $name $registry:$BUILD_NUMBER"
+				sh "docker run -dp 3300:3300 --name $name $registry:$BUILD_NUMBER"
 			}
 		}
 	}
