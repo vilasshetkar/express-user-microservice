@@ -3,7 +3,7 @@ const cors = require('cors')
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const app = express();
-const port = 3300; // or any desired port
+const port = process.env.PORT || 3300; // or any desired port
 
 process.env.SECRET_KEY = 'secret-key-ABC123';
 
