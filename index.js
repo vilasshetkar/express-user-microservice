@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 3300; // or any desired port
 
+console.log('This is server file');
 process.env.SECRET_KEY = 'secret-key-ABC123';
 
 // Connect to MongoDB using Mongoose new change
